@@ -26,7 +26,7 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'cosHub@example.com'
 
-  # Configure the class responsible to send e-mails.
+  # Configure the class responsible to send emails.
   # config.mailer = 'Devise::Mailer'
 
   # Configure the parent class responsible to send e-mails.
