@@ -1,0 +1,23 @@
+.banner {
+  height: 150px;
+  width: 100%;
+  background-size: cover;
+  background-color: $red;
+  background-position: top;
+  display: flex;
+  justify-content: left;
+  align-items:center;
+  position: relative;
+}
+
+.banner-text {
+  color: $gray;
+  font-size: 100%;
+  align-items: vertical;
+  position: absolute;
+  top: 10%;
+  left: 20px;
+  line-height: 60px;
+  opacity: 0.8;
+  text-shadow: 0px 0px 2px $light-gray;
+}
