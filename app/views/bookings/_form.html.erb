@@ -1,6 +1,7 @@
 <%# place holderfor booking form %>
-<%=simple_form_for (@booking) do |f|%>
-<%= f.input :start_date, as: :date_picker %>
-<%= f.input :end_date, as: :date_picker %>
-<%= f.submit %>
-<%end%>
+<%= simple_form_for [@cosplay, @booking] do |f| %>
+  <%= f.input :start_date, html5: true %>
+  <%= f.input :end_date, html5: true %>
+  <%= f.button :submit %>
+<% end %>
+
