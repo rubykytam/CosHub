@@ -1,5 +1,5 @@
 .banner {
-  height: 150px;
+  height: 100px;
   width: 100%;
   background-size: cover;
   background-color: $red;
@@ -8,7 +8,7 @@
   justify-content: left;
   align-items:center;
   position: relative;
- text-shadow: $light-gray 5px;
+  text-shadow: $light-gray 5px;
 }
 
 .banner-text {
@@ -18,8 +18,8 @@
   position: absolute;
   top: 10%;
   left: 20px;
-  line-height: 60px;
+  line-height: 20px;
   opacity: 0.8;
-  text-shadow: 5px $light-gray;
+  text-shadow: 2px 0px 5px $light-gray;
   font-weight: bold;
 }
