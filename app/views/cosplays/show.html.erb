@@ -15,9 +15,8 @@
           <p>Size: <%= @cosplay.size %></p>
           <p>From: <%= @cosplay.source_material %></p>
         </div>
-        <button class="booking-button">Book Now</button>
+        <%= link_to "Book Now", new_cosplay_booking_path(@cosplay), class: "btn btn-primary" %>
       </div>
     </div>
-    <%= render "bookings/form" %>
   </div>
 </div>
