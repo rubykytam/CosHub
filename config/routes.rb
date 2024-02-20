@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   resources :cosplays, only: [:index, :show, :create, :new] do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:create, :new]
   end
 
 end
