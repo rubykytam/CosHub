@@ -1,6 +1,7 @@
 class Cosplay < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_one_attached :image
 
   SIZE = ['XS', 'S', 'M', 'L', 'XL']
   validates :size, presence: true
