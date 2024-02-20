@@ -15,9 +15,9 @@ class CosplaysController < ApplicationController
 
   def create
     @cosplay = Cosplay.new(cosplay_params)
-    @cosplay.user = @user
+    @cosplay.user = current_user
     if @cosplay.save
-        # redirect_to MY COSPLAYS ???
+      redirect_to cosplay_path(@cosplay)
     else
       render :new, status: :unprocessable_entity
     end
