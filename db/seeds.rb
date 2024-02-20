@@ -1,8 +1,11 @@
 require 'faker'
 require 'open-uri'
 
+Booking.destroy_all
 Cosplay.destroy_all
 User.destroy_all
+
+User.create(email: '123@gmail.com', password: '123123')
 
 10.times do
   u = User.create!(
