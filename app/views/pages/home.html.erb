@@ -1,15 +1,21 @@
 <div class="banner">
   <div class="banner-text">
-    <h1 style="font-family: Anta">CosHub</h1>
-    <p style="font-family: Kode Mono">Cosplay delivery, to your door, lightning fast</p>
+    <h1>CosHub</h1>
+    <p>Cosplay delivery, to your door, lightning fast</p>
   </div>
 </div>
+
 <div class="container">
 
   <div class="card-container">
-    <div class="homepage-card">a striking outfit</div>
-    <div class="homepage-card">a striking outfit</div>
-    <div class="homepage-card">a striking outfit</div>
-    <div class="homepage-card">a striking outfit</div>
+    <% @cosplays.each do |cosplay| %>
+        <div class="homepage-card">
+          <% if cosplay.image.attached? %>
+            <%= cl_image_tag(cosplay.image.key, width: 200, height: 200) %>
+          <% else %>
+            <%= image_tag "logo.png", alt: "default" %>
+          <% end %>
+        <% end %>
+      </div>
   </div>
 </div>

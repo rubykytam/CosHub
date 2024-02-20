@@ -4,7 +4,7 @@
   width: 35vw;
   aspect-ratio: 1/1;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px $gray;
   display: flex;
   align-items: end;
   padding: 5%;
@@ -12,6 +12,6 @@
   font-size: 100%;
   color: white;
   font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  text-shadow: 0 0 10px $gray;
   background-color: $blue;
 }
