@@ -1,1 +1,6 @@
 <%# place holderfor booking form %>
+<%=simple_form_for (@booking) do |f|%>
+<%= f.input :start_date, as: :date_picker %>
+<%= f.input :end_date, as: :date_picker %>
+<%= f.sumbit %>
+<%end%>
