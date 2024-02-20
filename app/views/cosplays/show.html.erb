@@ -1,7 +1,7 @@
 <div class="container w-75 mt-5">
   <div class="cosplay-show-card border p-3">
     <div class="d-flex justify-content-evenly">
-      <div class="cosplay-photo"><%= @cosplay.image %></div>
+      <div class="cosplay-photo"><%= cl_image_tag(@cosplay.image.key) %></div>
       <div class="cosplay-infos">
         <h1 class="title"><%= @cosplay.name %></h1>
         <p class="price"><%= @cosplay.price %> ¥ / Per day</p>
