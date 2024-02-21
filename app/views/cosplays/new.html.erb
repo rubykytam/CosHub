@@ -1,11 +1,13 @@
 <div class="container">
-  <h1>Add a Cosplay to your Rent List</h1>
-  <%= simple_form_for(@cosplay) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :source_material %>
-    <%= f.input :price %>
-    <%= f.input :size %>
-    <%= f.input :image, as: :file %>
-    <%= f.submit %>
-  <% end %>
+  <div class="form-container">
+    <h1>Add a Cosplay</h1>
+    <%= simple_form_for(@cosplay) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :source_material %>
+      <%= f.input :price %>
+      <%= f.input :size %>
+      <%= f.input :image, as: :file %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
