@@ -29,10 +29,10 @@
     </div>
     <div class="cosplay-info-and-booking-form">
       <div class="cosplay-info d-flex flex-column">
-        <p>From: <%= @cosplay.source_material %></p>
+        <p>Source: <%= @cosplay.source_material %></p>
         <p><%= @cosplay.price %> ¥ / Per day</p>
         <p>Size: <%= @cosplay.size %></p>
-        <%= link_to "Book Now", new_cosplay_booking_path(@cosplay), class: "btn-booking" %>
+        <%= link_to "Book Now", new_cosplay_booking_path(@cosplay), class: "button btn-booking" %>
       </div>
       <div class="booking-form">
       </div>
