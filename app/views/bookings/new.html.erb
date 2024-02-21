@@ -5,5 +5,8 @@
     <div class="image-card">
       <%= cl_image_tag(@cosplay.image.key, width: 200, height: 200) %>
     </div>
+    <div class="cosplay-details">
+        <h1 class="title"><%= @cosplay.name %></h1>
+        <p class="price"><%= @cosplay.price %> ¥ / Per day</p>
   </div>
 </div>
