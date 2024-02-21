@@ -8,7 +8,7 @@
   <div class="card-container">
     <% @cosplays.each do |cosplay| %>
       <%= link_to cosplay_path(cosplay), class:"card-link" do %>
-        <div class="homepage-card" style="background-image: url( <%= cosplay.image.attached? ? cl_image_path(cosplay.image.key) : image_path("logo.png") %> )">
+        <div class="homepage-card" style="background-image: url( <%= cosplay.images.attached? ? cl_image_path(cosplay.images.first.key) : image_path("logo.png") %> )">
           <h3> <%= cosplay.name %> </h3>
         </div>
       <% end %>
