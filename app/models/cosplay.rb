@@ -1,7 +1,7 @@
 class Cosplay < ApplicationRecord
   belongs_to :user
   has_many :bookings
-  has_many :images, as: :imagebank
+  #has_many :images, as: :imagebank
   has_many_attached :images
   validate :validate_image_count, on: :update
 
