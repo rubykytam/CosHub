@@ -51,6 +51,62 @@ COSPLAYS = [
     price: 13000,
     user: user5,
     image_url:'https://s.alicdn.com/@sc04/kf/H8aa19be3e6964075aee1bf70cd56e5163.jpg_720x720q50.jpg'
+  },
+  {
+    name: 'Doreamon',
+    source_material: 'Doreamon',
+    size: "XL",
+    price: 3000,
+    user: user5,
+    image_url:'https://laz-img-sg.alicdn.com/p/11c75ab7b6a3cfeb0c6e5b50434575f6.jpg'
+  },
+  {
+    name: 'Shokudaikiri',
+    source_material: 'Toukeranbu',
+    size: "L",
+    price: 5500,
+    user: user2,
+    image_url:'https://clould.ohcosplay.com/images/cosplaymade20170329/QYY080.jpg'
+  },
+  {
+    name: 'kyuujo Ten',
+    source_material: 'Idolish7',
+    size: "M",
+    price: 6500,
+    user: user2,
+    image_url:'https://ae01.alicdn.com/kf/HTB1y9BfPXXXXXcNaXXXq6xXFXXXc/COSPLAYONSEN-Idolish7-Trigger-Tenn-Kujo-Cosplay-Costume-Full-Set-All-Sizes-adult-costume.jpg'
+  },
+  {
+    name: 'Nico',
+    source_material: 'Love Live',
+    size: "M",
+    price: 7500,
+    user: user3,
+    image_url:'https://cosplayflying.com/cdn/shop/products/Anime_Love_Live_Taisho_Kimono_Awakening_Yazawa_Nico_Cosplay_Costume_Custom_Made_for_Girls_Adult_Women_Halloween_Carnival_Party_Outfits-1_1000x.jpg?v=1574754888'
+  },
+  {
+    name: 'Tokai Teio',
+    source_material: 'Uma Musume',
+    size: "M",
+    price: 7500,
+    user: user4,
+    image_url:'https://www.cosplayclass.com/wp-content/uploads/2018/12/Uma-Musume-Pretty-Derby-Toukai-Teiou-Tokai-Cosplay-Costume-1.jpg'
+  },
+  {
+    name: 'UNDEAD',
+    source_material: 'Ensemble Star',
+    size: "L",
+    price: 5000,
+    user: user1,
+    image_url:'https://trendsincosplay.com/cdn/shop/products/9d53e4c1a226b95611fb709247a776ff.jpg?v=1657874658'
+  },
+  {
+    name: 'Tsurotairou',
+    source_material: 'Twisted Wonderland',
+    size: "L",
+    price: 8000,
+    user: user2,
+    image_url:'https://cosplayflying.com/cdn/shop/products/GameTwisted-WonderlandSleepingBeautyMalleusDraconiaCosplayCostumeMaleUniformOutfit-1_1000x.jpg?v=1588231807'
   }
 ]
 
