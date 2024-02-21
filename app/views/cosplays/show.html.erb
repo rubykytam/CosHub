@@ -1,22 +1,23 @@
 <div class="container w-75 mt-5">
   <div class="cosplay-show-card border p-3">
-    <div class="d-flex justify-content-evenly">
-      <div class="cosplay-photo">
+    <div class="cosplay-card-container">
+      <div class="carousel-container">
         <% if @cosplay.image.attached? %>
           <%= cl_image_tag(@cosplay.image.key, width: 200, height: 200) %>
         <% else %>
           <%= image_tag "logo.png", alt: "default" %>
         <% end %>
       </div>
-      <div class="cosplay-infos">
-        <h1 class="title"><%= @cosplay.name %></h1>
-        <p class="price"><%= @cosplay.price %> ¥ / Per day</p>
-        <div class="details">
+      <div class="cosplay-info-and-booking-form">
+        <div class="cosplay-info">
+          <h1 class="title"><%= @cosplay.name %></h1>
+          <p class="price"><%= @cosplay.price %> ¥ / Per day</p>
           <p>Size: <%= @cosplay.size %></p>
           <p>From: <%= @cosplay.source_material %></p>
+          <%= link_to "Book Now", new_cosplay_booking_path(@cosplay), class: "btn btn-primary" %>
         </div>
-        <%= link_to "Book Now", new_cosplay_booking_path(@cosplay), class: "btn btn-primary" %>
+        <div class="booking-form">
+        </div>
       </div>
     </div>
   </div>
-</div>
