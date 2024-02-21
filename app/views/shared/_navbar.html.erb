@@ -1,8 +1,11 @@
 <div class="navbar navbar-light navbar-lewagon">
   <div class="container-fluid d-flex flex-nowrap">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+    <div class="d-flex align-items-center">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "coshublogo.png" %>
+      <% end %>
+      <h2 class="m-0">CosHub</h2>
+    </div>
     <div class="d-flex justify-content-end">
       <input type="search" id="site-search" name="q" placeholder="Search for cosplays..." class="form-control"/>
       <i class="fa-regular fa-bell d-flex align-items-center fs-5 ms-3"></i>
@@ -16,7 +19,7 @@
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <div class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
-                <%= link_to "Orders", "#", class: "dropdown-item" %>
+                <%= link_to "My Orders", "/bookings", class: "dropdown-item" %>
                 <%= link_to "My Products", "#", class: "dropdown-item" %>
                 <%= link_to "Requests", "#", class: "dropdown-item" %>
                 <%= link_to "Sell a cosplay", "cosplays/new", class: "dropdown-item" %>
