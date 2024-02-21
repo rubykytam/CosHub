@@ -1,23 +1,33 @@
 <div class="container">
-  <h1 class="w-50">Your Bookings</h2>
+  <h1 class="w-50 mb-4">Your Bookings</h2>
   <% @bookings.order(start_date: :asc).each do |booking| %>
-    <div class="booking-card border w-50 d-flex">
-      <div class="cosplay-photo">
-        <% if booking.cosplay.images.attached? %>
-          <%= cl_image_tag(booking.cosplay.images.first.key, width: 200, height: 200) %>
-        <% else %>
-          <%= image_tag "logo.png", alt: "default" %>
-        <% end %>
+    <div class="cosplay-show-card">
+      <div class="d-flex justify-content-between">
+        <h1 class="title m-0"><%= booking.cosplay.name %></h1>
+        <p class="btn-booking align-self-center opacity-75">Status: <%= booking.status %></p>
       </div>
-      <div class="booking-infos">
-        <h3><%= booking.cosplay.name  %></h3>
-        <h5><%= booking.cosplay.source_material %></h5>
-        <div class="booking-details">
+      <div class="carousel-container my-3">
+        <div id="pictureCarousel" class="carousel slide">
+          <div class="carousel-inner">
+            <%= render "cosplays/images", cosplay: booking.cosplay %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#pictureCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#pictureCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="cosplay-info-and-booking-form d-flex justify-content-between">
+        <div class="cosplay-info d-flex flex-column">
+          <p>Source: <%= booking.cosplay.source_material %></p>
+          <p><%= booking.cosplay.price %> ¥ / Per day</p>
           <p>Size: <%= booking.cosplay.size %></p>
-          <p>Price: <%= booking.cosplay.price %>¥ / Per day</p>
           <p>From: <%= booking.start_date %>, To: <%= booking.end_date %></p>
         </div>
-        <p><%= booking.status %></p>
       </div>
     </div>
   <% end %>
