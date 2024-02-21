@@ -1,0 +1,51 @@
+.background-red-1 {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  background-color: $red;
+  border-radius: 50%, 50%, 0, 0;
+  height: 60%;
+  width: 20%;
+}
+
+.background-red-2 {
+  position: absolute;
+  right: 35%;
+  bottom: 0%;
+  background-color: $red;
+  border-radius: 50%, 50%, 0, 0;
+  height: 25%;
+  width: 20%;
+}
+
+.background-red-3 {
+  position: absolute;
+  right: 75%;
+  bottom: 0%;
+  background-color: $red;
+  border-radius: 50%, 50%, 0, 0;
+  height: 45%;
+  width: 20%;
+}
+
+.background-grey-1 {
+  position: absolute;
+  right: 70%;
+  bottom: 0%;
+  background-color: $gray;
+  opacity: 0.5;
+  border-radius: 50%, 50%, 0, 0;
+  height: 30%;
+  width: 20%;
+}
+
+.background-grey-2 {
+  position: absolute;
+  right: 20%;
+  bottom: 0%;
+  background-color: $gray;
+  opacity: 0.5;
+  border-radius: 50%, 50%, 0, 0;
+  height: 55%;
+  width: 20%;
+}
