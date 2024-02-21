@@ -13,7 +13,7 @@ user5 = User.create(email: 'cosplaylover@gmail.com', password: 'lovelovelove')
 
 COSPLAYS = [
   {
-    name: "Dark Vador",
+    name: "Dark Vader",
     source_material: "Star Wars",
     price: 2000,
     size: "XS",
@@ -21,7 +21,7 @@ COSPLAYS = [
     user: user1
   },
   {
-    name: 'Anna',
+    name: 'Anya Forger',
     source_material: 'Spy Family',
     size: "M",
     price: 12000,
@@ -29,7 +29,7 @@ COSPLAYS = [
     image_url:['https://i.pinimg.com/564x/17/44/85/17448573378518e8d7dd86552639f923.jpg']
   },
   {
-    name: 'York',
+    name: 'Yor Forger',
     source_material: 'Spy Family',
     size: "L",
     price: 15000,
@@ -53,8 +53,8 @@ COSPLAYS = [
     image_url:['https://s.alicdn.com/@sc04/kf/H8aa19be3e6964075aee1bf70cd56e5163.jpg_720x720q50.jpg','https://m.media-amazon.com/images/I/61n8wRrdlrL._AC_UF894,1000_QL80_.jpg']
   },
   {
-    name: 'Doreamon',
-    source_material: 'Doreamon',
+    name: 'Doraemon',
+    source_material: 'Doraemon',
     size: "XL",
     price: 3000,
     user: user5,
