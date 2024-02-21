@@ -1,23 +1,41 @@
-<div class="container w-75 mt-5">
-  <div class="cosplay-show-card border p-3">
-    <div class="cosplay-card-container">
-      <div class="carousel-container">
-        <% if @cosplay.image.attached? %>
-          <%= cl_image_tag(@cosplay.image.key, width: 200, height: 200) %>
-        <% else %>
-          <%= image_tag "logo.png", alt: "default" %>
-        <% end %>
+<div class="container w-50 mt-5">
+  <div class="cosplay-show-card">
+    <h1 class="title"><%= @cosplay.name %></h1>
+    <div class="carousel-container my-3">
+      <div id="pictureCarousel" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active" style="background-image: url(<% if @cosplay.image.attached? %>
+                <%= cl_image_path(@cosplay.image.key) %>
+              <% else %>
+                <%= image_tag "logo.png", alt: "default" %>
+              <% end %>);">
+          </div>
+          <div class="carousel-item" style="background-image: url(<% if @cosplay.image.attached? %>
+                <%= cl_image_path(@cosplay.image.key) %>
+              <% else %>
+                <%= image_tag "logo.png", alt: "default" %>
+              <% end %>);">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#pictureCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#pictureCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="cosplay-info-and-booking-form">
-        <div class="cosplay-info">
-          <h1 class="title"><%= @cosplay.name %></h1>
-          <p class="price"><%= @cosplay.price %> ¥ / Per day</p>
-          <p>Size: <%= @cosplay.size %></p>
-          <p>From: <%= @cosplay.source_material %></p>
-          <%= link_to "Book Now", new_cosplay_booking_path(@cosplay), class: "btn btn-primary" %>
-        </div>
-        <div class="booking-form">
-        </div>
+    </div>
+    <div class="cosplay-info-and-booking-form">
+      <div class="cosplay-info d-flex flex-column">
+        <p>From: <%= @cosplay.source_material %></p>
+        <p><%= @cosplay.price %> ¥ / Per day</p>
+        <p>Size: <%= @cosplay.size %></p>
+        <%= link_to "Book Now", new_cosplay_booking_path(@cosplay), class: "btn-booking" %>
+      </div>
+      <div class="booking-form">
       </div>
     </div>
   </div>
+</div>
