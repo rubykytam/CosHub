@@ -4,9 +4,10 @@
 }
 
 .cosplay-show-card {
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, .2);
   padding: 8px 18px;
   margin-bottom: 50px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px $gray;
 }
 
 .carousel-item {
