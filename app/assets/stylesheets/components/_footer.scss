@@ -40,3 +40,25 @@
   opacity: 0.5;
   text-decoration: none;
 }
+.footer-copyright {
+  text-align: end;
+}
+
+@media (max-width: 650px) {
+  .footer * {
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 550px) {
+  .footer-links a {
+    padding: 0px 5px;
+  }
+  .footer {
+    padding: 0 5vw;
+  }
+  .footer-copyright * {
+    font-size: 12px;
+  }
+}
