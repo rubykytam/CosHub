@@ -111,12 +111,12 @@ COSPLAYS = [
 ]
 
 COSPLAYS.each do |cosplay|
-  url = cosplay[:image_url]
+  p url = cosplay[:image_url]
   cosplay.delete(:image_url)
   cosplayitem = Cosplay.create(cosplay)
   cosplayitem.image.attach(
     io: URI.open(url),
-    filename: 'cosplay.jpg',
+    filename: "#{cosplayitem.name}.jpg",
     content_type: "image/jpg"
   )
 end
