@@ -11,7 +11,7 @@
               <% end %>);">
           </div>
           <div class="carousel-item" style="background-image: url(<% if @cosplay.images.attached? %>
-                <%= cl_image_path(@cosplay.images.first.key) %>
+                <%= cl_image_path(@cosplay.images.last.key) %>
               <% else %>
                 <%= image_tag "logo.png", alt: "default" %>
               <% end %>);">
