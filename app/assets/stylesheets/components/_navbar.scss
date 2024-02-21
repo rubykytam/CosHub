@@ -1,6 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  position: sticky;
+  top: 0;
+  background-color: $red;
+  color: $light-gray;
+  padding-right: 20px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,4 +18,9 @@
 
 .navbar-nav .dropdown-menu {
   position: absolute;
+}
+
+.login-button {
+color: $gray;
+background-color: $light-gray;
 }
