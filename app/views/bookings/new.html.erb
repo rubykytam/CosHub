@@ -3,7 +3,7 @@
     <h2>Book this Cosplay!</h2>
     <%= render 'form' %>
     <div class="image-card">
-      <%= cl_image_tag(@cosplay.image.key, width: 200, height: 200) %>
+      <%= cl_image_tag(@cosplay.images.first.key, width: 200, height: 200) %>
     </div>
     <div class="cosplay-details">
         <h1 class="title"><%= @cosplay.name %></h1>
