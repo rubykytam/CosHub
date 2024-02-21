@@ -4,14 +4,14 @@
     <div class="carousel-container my-3">
       <div id="pictureCarousel" class="carousel slide">
         <div class="carousel-inner">
-          <div class="carousel-item active" style="background-image: url(<% if @cosplay.image.attached? %>
-                <%= cl_image_path(@cosplay.image.key) %>
+          <div class="carousel-item active" style="background-image: url(<% if @cosplay.images.attached? %>
+                <%= cl_image_path(@cosplay.images.first.key) %>
               <% else %>
                 <%= image_tag "logo.png", alt: "default" %>
               <% end %>);">
           </div>
-          <div class="carousel-item" style="background-image: url(<% if @cosplay.image.attached? %>
-                <%= cl_image_path(@cosplay.image.key) %>
+          <div class="carousel-item" style="background-image: url(<% if @cosplay.images.attached? %>
+                <%= cl_image_path(@cosplay.images.first.key) %>
               <% else %>
                 <%= image_tag "logo.png", alt: "default" %>
               <% end %>);">

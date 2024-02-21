@@ -17,7 +17,7 @@ COSPLAYS = [
     source_material: "Star Wars",
     price: 2000,
     size: "XS",
-    image_url: "https://newcossky.fr/cdn/shop/products/11006195-cosplaystyle2014.jpg?v=1684143610",
+    image_url: ["https://newcossky.fr/cdn/shop/products/11006195-cosplaystyle2014.jpg?v=1684143610"],
     user: user1
   },
   {
@@ -26,7 +26,7 @@ COSPLAYS = [
     size: "M",
     price: 12000,
     user: user2,
-    image_url:'https://i.pinimg.com/564x/17/44/85/17448573378518e8d7dd86552639f923.jpg'
+    image_url:['https://i.pinimg.com/564x/17/44/85/17448573378518e8d7dd86552639f923.jpg']
   },
   {
     name: 'York',
@@ -34,7 +34,7 @@ COSPLAYS = [
     size: "L",
     price: 15000,
     user: user3,
-    image_url:'https://ae01.alicdn.com/kf/S97d34b0b0a2f441a8218ef787f4aa656q/Anime-SPY-FAMILY-Cosplay-Yor-Forger-Cosplay-Costume-Manga-SPY-FAMILY-Cosplay-Costume-Women-Yor-Shoes.jpg'
+    image_url:['https://ae01.alicdn.com/kf/S97d34b0b0a2f441a8218ef787f4aa656q/Anime-SPY-FAMILY-Cosplay-Yor-Forger-Cosplay-Costume-Manga-SPY-FAMILY-Cosplay-Costume-Women-Yor-Shoes.jpg']
   },
   {
     name: 'Sasuke',
@@ -42,7 +42,7 @@ COSPLAYS = [
     size: "M",
     price: 8000,
     user: user4,
-    image_url:'https://fortunecosplay.com/cdn/shop/products/Hot-Anime-Naruto-Sasuke-Uchiha-4nd-Cosplay-Costume-Ninja-Sasuke-Uchiha-4nd-Halloween-Party-Cosplay-Costume_grande.jpg?v=1608172661'
+    image_url:['https://fortunecosplay.com/cdn/shop/products/Hot-Anime-Naruto-Sasuke-Uchiha-4nd-Cosplay-Costume-Ninja-Sasuke-Uchiha-4nd-Halloween-Party-Cosplay-Costume_grande.jpg?v=1608172661']
   },
   {
     name: 'Conan',
@@ -50,7 +50,7 @@ COSPLAYS = [
     size: "S",
     price: 13000,
     user: user5,
-    image_url:'https://s.alicdn.com/@sc04/kf/H8aa19be3e6964075aee1bf70cd56e5163.jpg_720x720q50.jpg'
+    image_url:['https://s.alicdn.com/@sc04/kf/H8aa19be3e6964075aee1bf70cd56e5163.jpg_720x720q50.jpg','https://m.media-amazon.com/images/I/61n8wRrdlrL._AC_UF894,1000_QL80_.jpg']
   },
   {
     name: 'Doreamon',
@@ -58,7 +58,7 @@ COSPLAYS = [
     size: "XL",
     price: 3000,
     user: user5,
-    image_url:'https://laz-img-sg.alicdn.com/p/11c75ab7b6a3cfeb0c6e5b50434575f6.jpg'
+    image_url:['https://laz-img-sg.alicdn.com/p/11c75ab7b6a3cfeb0c6e5b50434575f6.jpg']
   },
   {
     name: 'Shokudaikiri',
@@ -66,7 +66,7 @@ COSPLAYS = [
     size: "L",
     price: 5500,
     user: user2,
-    image_url:'https://clould.ohcosplay.com/images/cosplaymade20170329/QYY080.jpg'
+    image_url:['https://clould.ohcosplay.com/images/cosplaymade20170329/QYY080.jpg']
   },
   {
     name: 'kyuujo Ten',
@@ -74,7 +74,7 @@ COSPLAYS = [
     size: "M",
     price: 6500,
     user: user2,
-    image_url:'https://ae01.alicdn.com/kf/HTB1y9BfPXXXXXcNaXXXq6xXFXXXc/COSPLAYONSEN-Idolish7-Trigger-Tenn-Kujo-Cosplay-Costume-Full-Set-All-Sizes-adult-costume.jpg'
+    image_url:['https://ae01.alicdn.com/kf/HTB1y9BfPXXXXXcNaXXXq6xXFXXXc/COSPLAYONSEN-Idolish7-Trigger-Tenn-Kujo-Cosplay-Costume-Full-Set-All-Sizes-adult-costume.jpg']
   },
   {
     name: 'Nico',
@@ -82,7 +82,7 @@ COSPLAYS = [
     size: "M",
     price: 7500,
     user: user3,
-    image_url:'https://cosplayflying.com/cdn/shop/products/Anime_Love_Live_Taisho_Kimono_Awakening_Yazawa_Nico_Cosplay_Costume_Custom_Made_for_Girls_Adult_Women_Halloween_Carnival_Party_Outfits-1_1000x.jpg?v=1574754888'
+    image_url:['https://cosplayflying.com/cdn/shop/products/Anime_Love_Live_Taisho_Kimono_Awakening_Yazawa_Nico_Cosplay_Costume_Custom_Made_for_Girls_Adult_Women_Halloween_Carnival_Party_Outfits-1_1000x.jpg?v=1574754888']
   },
   {
     name: 'Tokai Teio',
@@ -90,7 +90,7 @@ COSPLAYS = [
     size: "M",
     price: 7500,
     user: user4,
-    image_url:'https://www.cosplayclass.com/wp-content/uploads/2018/12/Uma-Musume-Pretty-Derby-Toukai-Teiou-Tokai-Cosplay-Costume-1.jpg'
+    image_url:['https://www.cosplayclass.com/wp-content/uploads/2018/12/Uma-Musume-Pretty-Derby-Toukai-Teiou-Tokai-Cosplay-Costume-1.jpg']
   },
   {
     name: 'UNDEAD',
@@ -98,7 +98,7 @@ COSPLAYS = [
     size: "L",
     price: 5000,
     user: user1,
-    image_url:'https://trendsincosplay.com/cdn/shop/products/9d53e4c1a226b95611fb709247a776ff.jpg?v=1657874658'
+    image_url:['https://trendsincosplay.com/cdn/shop/products/9d53e4c1a226b95611fb709247a776ff.jpg?v=1657874658']
   },
   {
     name: 'Tsurotairou',
@@ -106,19 +106,21 @@ COSPLAYS = [
     size: "L",
     price: 8000,
     user: user2,
-    image_url:'https://cosplayflying.com/cdn/shop/products/GameTwisted-WonderlandSleepingBeautyMalleusDraconiaCosplayCostumeMaleUniformOutfit-1_1000x.jpg?v=1588231807'
+    image_url:['https://cosplayflying.com/cdn/shop/products/GameTwisted-WonderlandSleepingBeautyMalleusDraconiaCosplayCostumeMaleUniformOutfit-1_1000x.jpg?v=1588231807']
   }
 ]
 
 COSPLAYS.each do |cosplay|
-  url = cosplay[:image_url]
+  urls = cosplay[:image_url]
   cosplay.delete(:image_url)
   cosplayitem = Cosplay.create(cosplay)
-  cosplayitem.image.attach(
-    io: URI.open(url),
-    filename: 'cosplay.jpg',
-    content_type: "image/jpg"
-  )
+  urls.each do |url|
+    cosplayitem.images.attach(
+      io: URI.open(url),
+      filename: 'cosplay.jpg',
+      content_type: "image/jpg"
+    )
+  end
 end
 
 # This file should ensure the existence of records required to run the application in every environment (production,

@@ -3,8 +3,8 @@
   <% @bookings.order(start_date: :asc).each do |booking| %>
     <div class="booking-card border w-50 d-flex">
       <div class="cosplay-photo">
-        <% if booking.cosplay.image.attached? %>
-          <%= cl_image_tag(booking.cosplay.image.key, width: 200, height: 200) %>
+        <% if booking.cosplay.images.attached? %>
+          <%= cl_image_tag(booking.cosplay.images.first.key, width: 200, height: 200) %>
         <% else %>
           <%= image_tag "logo.png", alt: "default" %>
         <% end %>
