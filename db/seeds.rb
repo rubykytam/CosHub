@@ -21,7 +21,7 @@ COSPLAYS = [
   }
 ]
 COSPLAYS.each do cosplay
-
+end
 10.times do
   u = User.create!(
     email: Faker::Internet.email,
