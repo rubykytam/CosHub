@@ -1,3 +1,7 @@
+.container {
+  width: 50%;
+}
+
 .cosplay-show-card {
   box-shadow: 1px 1px 15px rgba(0, 0, 0, .2);
   padding: 8px 18px;
@@ -32,4 +36,10 @@
 .btn-booking:hover {
   opacity: .6;
   transition: .2s ease-in-out;
+}
+
+@media (max-width: 800px) {
+  .container {
+    width: 100%;
+  }
 }
