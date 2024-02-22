@@ -10,14 +10,36 @@
   padding: 5%;
   justify-content: space-around;
   font-size: 100%;
-  color: white;
+  color: $light-gray;
   font-weight: bolder;
-  text-shadow: 0 0 10px $gray;
+  text-shadow: 0 0 8px $gray;
   background-color: $blue;
+  &:hover {
+    .info-text{
+      background-color: rgba(11,79,108,0.85);
+    }
+  }
 }
+
 .card-link {
   text-decoration: none;
+  border-radius: 8px;
 }
+
 .card-link:hover h3 {
   color: $red;
+  text-shadow: 0 0 4px black;
+}
+
+.card-link:hover p {
+  color: $red;
+  text-shadow: 0 0 4px black;
+}
+
+.info-text{
+  background-color: rgba(11,79,108,0.5);
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px $gray;
 }

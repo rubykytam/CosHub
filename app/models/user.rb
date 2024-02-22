@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :cosplays
   has_many :bookings
+  has_many :bookings_as_vendor, through: :cosplays, source: :bookings
 
   # validates :username, presence: true
   # validates :username, uniqueness: true

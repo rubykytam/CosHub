@@ -1,6 +1,8 @@
 <%# place holderfor booking form %>
-<%= simple_form_for [@cosplay, @booking] do |f| %>
-  <%= f.input :start_date, html5: true %>
-  <%= f.input :end_date, html5: true %>
+<%= simple_form_for [@cosplay, @booking], html:{ data: { controller: 'totalprice' }} do |f| %>
+  <%= f.input :start_date, html5: true, input_html:{data: { totalprice_target: 'startDate', action: 'change->totalprice#calculatePrice' }} %>
+  <%= f.input :end_date, html5: true, input_html:{data: { totalprice_target: 'endDate', action: 'change->totalprice#calculatePrice' }} %>
+      <div data-totalprice-target="unitPrice" data-totalprice-unitprice="<%= @cosplay.price %>"><%= @cosplay.price %> ¥ per Day</div>
+      <div data-totalprice-target="daysDifference"></div>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
