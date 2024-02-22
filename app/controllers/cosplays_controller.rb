@@ -5,6 +5,11 @@ class CosplaysController < ApplicationController
   def index
     @cosplays = Cosplay.all
     @pagy, @cosplays = pagy(@cosplays, items: 20)
+    if params[:query].present?
+      sql_subquery = "name ILIKE :query OR source_material ILIKE :query"
+      @cosplays = @cosplays.where(sql_subquery, query: "%#{params[:query]}%")
+      # redirect_to cosplays_path(query:params[:query])
+    end
   end
 
   def show
@@ -32,6 +37,6 @@ class CosplaysController < ApplicationController
   end
 
   def cosplay_params
-    params.require(:cosplay).permit(:name, :size, :source_material, :price, :image)
+    params.require(:cosplay).permit(:name, :size, :source_material, :price, images: [])
   end
 end
