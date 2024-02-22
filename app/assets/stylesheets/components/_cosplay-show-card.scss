@@ -17,9 +17,13 @@
 .carousel-inner {
   border-radius: 5px;
 }
-.carousel-control-prev-icon, .carousel-control-next-icon  {
+.prev-next-button {
   background-color: $red;
   border-radius: 50%;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cosplay-info-and-booking-form {
   border-top: 1px solid lightgray;

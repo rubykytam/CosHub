@@ -1,10 +1,10 @@
 <div class="navbar navbar-light navbar-lewagon">
   <div class="container-fluid d-flex flex-nowrap">
     <div class="d-flex align-items-center">
-      <%= link_to root_path, class: "navbar-brand" do %>
+      <%= link_to root_path, class: "navbar-brand d-flex" do %>
         <%= image_tag "coshublogo.png" %>
+        <h2 class="m-0 ms-3 text-light">CosHub</h2>
       <% end %>
-      <h2 class="m-0">CosHub</h2>
     </div>
     <div class="d-flex justify-content-end">
       <input type="search" id="site-search" name="q" placeholder="Search for cosplays..." class="form-control"/>
@@ -13,7 +13,7 @@
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a href="#" class="ms-3" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="bg-light navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
             </a>
