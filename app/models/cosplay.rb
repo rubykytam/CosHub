@@ -14,7 +14,7 @@ class Cosplay < ApplicationRecord
 
   def validate_image_count
     if images.length > 3
-      errors.add(:base, "You can only upload up to 3 photos")
+      errors.add(:images, "You can only upload up to 3 photos")
     end
   end
 
