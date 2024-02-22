@@ -3,11 +3,11 @@ class CosplaysController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @cosplays = Cosplay.all
     if params[:query].present?
       sql_subquery = "name ILIKE :query OR source_material ILIKE :query"
-      @cosplays = Cosplay.where(sql_subquery, query: "%#{params[:query]}%")
-    else
-      @cosplays = Cosplay.all
+      @cosplays = @cosplays.where(sql_subquery, query: "%#{params[:query]}%")
+      # redirect_to cosplays_path(query:params[:query])
     end
   end
 
