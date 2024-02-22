@@ -1,12 +1,39 @@
-<h1>Requests</h1>
-<% @cosplays.each do |cosplay| %>
-  <%= cosplay.name %>
-<% end %>
-<% @bookings.each do |booking| %>
-  <%= booking.user.email %>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
-  <div class="d-flex">
+<div class="container">
+  <h1 class="w-50 mb-4">Requests</h1>
+  <% booking_count = 0 %>
+  <% @bookings.order(start_date: :asc).each do |booking| %>
+    <% booking_count += 1 %>
+    <div class="cosplay-show-card">
+      <div class="d-flex justify-content-between">
+        <h1 class="title m-0"><%= booking.cosplay.name %></h1>
+        <p class="btn-booking align-self-center opacity-75">Status: <%= booking.status %></p>
+      </div>
+      <div class="carousel-container my-3">
+        <div id="pictureCarousel<%= booking_count %>" class="carousel slide">
+          <div class="carousel-inner">
+            <%= render "cosplays/images", cosplay: booking.cosplay %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="prev">
+            <div class="prev-next-button">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </div>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="next">
+            <div class="prev-next-button">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="cosplay-info-and-booking-form d-flex justify-content-between">
+        <div class="cosplay-info d-flex flex-column">
+          <p>Username: <%= booking.user.email %></p>
+          <p>From: <%= booking.start_date %>, To: <%= booking.end_date %></p>
+        </div>
+      </div>
+    <div class="d-flex">
   <%= simple_form_for booking, url: vendor_booking_path(booking) do |f| %>
     <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
     <%= f.submit 'Accept', class: 'btn btn-info' %>
@@ -17,4 +44,6 @@
     <%= f.submit 'Reject', class: 'btn btn-light' %>
   <% end %>
 </div>
-<% end %>
+    </div>
+  <% end %>
+</div>

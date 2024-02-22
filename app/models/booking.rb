@@ -8,6 +8,8 @@ class Booking < ApplicationRecord
   validate :start_date_in_future, on: :create
   validate :end_date_in_future, on: :create
 
+  enum status: { pending: 'pending', accepted: 'accepted', rejected: 'rejected' }
+
   def start_date_in_future
     if start_date.present? && start_date <= Date.today
       errors.add(:start_date, "must be in the future")
