@@ -1,14 +1,16 @@
 .banner {
   height: 100px;
   width: 100%;
+  margin-top: -40px;
   background-size: cover;
   background-color: $red;
   background-position: top;
   display: flex;
   justify-content: left;
-  align-items:center;
+  align-items: end;
   position: relative;
   text-shadow: $light-gray 5px;
+  z-index: 1;
 }
 
 .banner-text {
@@ -22,4 +24,64 @@
   opacity: 0.8;
   text-shadow: 2px 0px 5px $light-gray;
   font-weight: bold;
+}
+
+.curve {
+  position: absolute;
+  height: 250px;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  z-index: 2;
+  margin-top: 100px;
+}
+
+.curve::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 51% 100%;
+  width: 55%;
+  height: 100%;
+  transform: translate(-4%, 60%);
+  background-color: $white;
+  z-index: 2;
+}
+
+.curve::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 50% 100%;
+  width: 55%;
+  height: 100%;
+  background-color: $red;
+  transform: translate(85%, 40%);
+  z-index: -1;
+}
+
+.banner-infos {
+  z-index: 5;
+  margin: auto;
+  color: white;
+  display: flex;
+  width: 100%;
+  padding: 10px 20px;
+}
+.banner-infos-left {
+  width: 50%;
+}
+.banner-infos-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.index-link {
+  color: $blue;
+  border-color: $blue;
+}
+.index-link:hover {
+  background-color: $blue;
+  color: $white;
 }
