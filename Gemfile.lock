@@ -197,6 +197,7 @@ GEM
     nokogiri (1.16.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pagy (7.0.4)
     pg (1.5.5)
     popper_js (2.11.8)
     psych (5.1.2)
@@ -329,6 +330,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   importmap-rails
   jbuilder
+  pagy (~> 7.0, >= 7.0.4)
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.3)

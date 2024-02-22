@@ -1,0 +1,15 @@
+.pag-bar {
+  display: flex;
+  justify-content: center;
+}
+.page-link.active, .active > .page-link {
+  background-color: $red;
+  border-color: $red;
+}
+
+.page-link {
+  color: $red;
+}
+.page-link:hover {
+  color: $gray;
+}

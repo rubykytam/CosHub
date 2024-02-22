@@ -4,6 +4,7 @@ class CosplaysController < ApplicationController
 
   def index
     @cosplays = Cosplay.all
+    @pagy, @cosplays = pagy(@cosplays, items: 20)
   end
 
   def show
