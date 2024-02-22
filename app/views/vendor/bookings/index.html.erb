@@ -1,0 +1,20 @@
+<h1>Requests</h1>
+<% @cosplays.each do |cosplay| %>
+  <%= cosplay.name %>
+<% end %>
+<% @bookings.each do |booking| %>
+  <%= booking.user.email %>
+  <%= booking.start_date %>
+  <%= booking.end_date %>
+  <div class="d-flex">
+  <%= simple_form_for booking, url: vendor_booking_path(booking) do |f| %>
+    <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+    <%= f.submit 'Accept', class: 'btn btn-info' %>
+  <% end %>
+
+  <%= simple_form_for booking, url: vendor_booking_path(booking) do |f| %>
+    <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+    <%= f.submit 'Reject', class: 'btn btn-light' %>
+  <% end %>
+</div>
+<% end %>
