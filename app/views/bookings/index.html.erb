@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="w-50 mb-4">Your Bookings</h2>
+  <h1 class="w-50 mb-4">Your Bookings</h1>
   <% booking_count = 0 %>
   <% @bookings.order(start_date: :asc).each do |booking| %>
     <% booking_count += 1 %>
