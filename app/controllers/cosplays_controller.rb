@@ -3,7 +3,12 @@ class CosplaysController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @cosplays = Cosplay.all
+    if params[:query].present?
+      sql_subquery = "name ILIKE :query OR source_material ILIKE :query"
+      @cosplays = Cosplay.where(sql_subquery, query: "%#{params[:query]}%")
+    else
+      @cosplays = Cosplay.all
+    end
   end
 
   def show
@@ -31,6 +36,6 @@ class CosplaysController < ApplicationController
   end
 
   def cosplay_params
-    params.require(:cosplay).permit(:name, :size, :source_material, :price, :image)
+    params.require(:cosplay).permit(:name, :size, :source_material, :price, images: [])
   end
 end
