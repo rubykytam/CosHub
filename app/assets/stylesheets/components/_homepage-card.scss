@@ -15,3 +15,9 @@
   text-shadow: 0 0 10px $gray;
   background-color: $blue;
 }
+.card-link {
+  text-decoration: none;
+}
+.card-link:hover h3 {
+  color: $red;
+}
