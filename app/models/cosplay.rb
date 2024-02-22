@@ -10,7 +10,7 @@ class Cosplay < ApplicationRecord
   validates :size, inclusion: { in: SIZE }
   validates :name, presence: true
   validates :source_material, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
   def validate_image_count
     if images.length > 3
