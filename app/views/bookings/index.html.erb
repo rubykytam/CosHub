@@ -33,6 +33,10 @@
           <p><%= booking.cosplay.price %> ¥ / Per day</p>
           <p>Size: <%= booking.cosplay.size %></p>
           <p>From: <%= booking.start_date %>, To: <%= booking.end_date %></p>
+          <% number_of_days = (booking.end_date - booking.start_date).to_i+1 %>
+          <p>Number of days: <%= number_of_days %></p>
+          <% total_price = number_of_days * booking.cosplay.price%>
+          <p>Total price:<%= total_price %> ¥</p>
         </div>
       </div>
     </div>
