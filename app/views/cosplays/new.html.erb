@@ -7,6 +7,13 @@
       <%= f.input :price %>
       <%= f.input :size, as: :select, collection: Cosplay::SIZE %>
       <%= f.input :images, input_html: { multiple: true }, as: :file %>
+        <% if @cosplay.errors[:base].any? %>
+          <div class="alert alert-danger">
+            <% @cosplay.errors[:base].each do |error| %>
+              <%= error %><br>
+            <% end %>
+          </div>
+        <% end %>
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
   </div>
