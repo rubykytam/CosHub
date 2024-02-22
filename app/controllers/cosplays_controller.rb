@@ -10,6 +10,10 @@ class CosplaysController < ApplicationController
       @cosplays = @cosplays.where(sql_subquery, query: "%#{params[:query]}%")
       # redirect_to cosplays_path(query:params[:query])
     end
+    if params[:price_range].present?
+      sql_subquery = "price >= ? AND price <= ?"
+      @cosplays = @cosplays.where(sql_subquery, params[:price_range].split(",")[0].to_i, params[:price_range].split(",")[1].to_i)
+    end
   end
 
   def show
