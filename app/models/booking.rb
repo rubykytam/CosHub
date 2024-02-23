@@ -23,10 +23,13 @@ class Booking < ApplicationRecord
     end
   end
 
+  def pending?
+    status == 'pending'
+  end
+
   def cannot_book_own_cosplay
     if user_id == cosplay.user_id
       errors.add(:base, "You cannot book your own cosplay item")
     end
   end
-
 end
