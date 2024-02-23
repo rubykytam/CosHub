@@ -7,6 +7,7 @@ class Booking < ApplicationRecord
 
   validate :start_date_in_future, on: :create
   validate :end_date_in_future, on: :create
+  validate :cannot_book_own_cosplay
 
   enum status: { pending: 'pending', accepted: 'accepted', rejected: 'rejected' }
 
@@ -24,5 +25,11 @@ class Booking < ApplicationRecord
 
   def pending?
     status == 'pending'
+  end
+
+  def cannot_book_own_cosplay
+    if user_id == cosplay.user_id
+      errors.add(:base, "You cannot book your own cosplay item")
+    end
   end
 end

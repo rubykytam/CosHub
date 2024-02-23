@@ -5,6 +5,7 @@
   </div>
 </div> %>
 <div class="container">
+  <h1 class=" mb-3 mt-5">All our Cosplays:</h1>
   <div class="d-flex justify-content-center">
     <div class="card-container">
       <% if @cosplays.any? %>
@@ -12,10 +13,10 @@
           <div class="card d-flex justify-content-center">
             <%= link_to cosplay_path(cosplay), class:"card-link" do %>
               <div class="homepage-card" style="background-image: url( <%= cosplay.images.attached? ? cl_image_path(cosplay.images.first.key) : image_path("logo.png") %> )">
-                <div class="d-flex flex-column w-100">
+                <div class="d-flex flex-column w-100 info-text">
                   <h3 style="text-align: center"> <%= cosplay.name %> </h3>
-                  <div class="d-flex justify-content-between">
-                    <p> <%= cosplay.source_material %> </p>
+                  <div class="d-flex justify-content-between pl-4 pr-4">
+                    <p style="max-width: 45%"> <%= cosplay.source_material %> </p>
                     <p> ¥<%= cosplay.price %>/day </p>
                   </div>
                 </div>
