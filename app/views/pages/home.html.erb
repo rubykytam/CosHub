@@ -18,7 +18,7 @@
 </div> %>
 <div class="container" style="z-index: 5; position: relative;">
   <h1 class="recent-cosplay-title mb-3">Most recent cosplays:</h1>
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center flex-column">
     <div class="card-container">
       <% if @cosplays.any? %>
         <% @cosplays.each do |cosplay| %>
@@ -40,23 +40,28 @@
       <% else %>
         <em>Nice website, shame nobody has uploaded to it</em>
       <% end %>
+      <div class="last-card"></div>
+      <div class="last-card"></div>
+      <div class="last-card"></div>
     </div>
-  </div>
-  <h1 class="recent-cosplay-title mb-3 mt-5">Some Cosplays for You:</h1>
-  <div class="d-flex justify-content-center">
-    <div class="card-container">
-      <% if @cosplays.any? %>
-        <% @cosplays.sample(7).each do |cosplay| %>
-          <%= link_to cosplay_path(cosplay), class:"card-link" do %>
-            <div class="homepage-card" style="background-image: url( <%= cosplay.images.attached? ? cl_image_path(cosplay.images.first.key) : image_path("logo.png") %> )">
-              <h3> <%= cosplay.name %> </h3>
-            </div>
+    <h1 class="recent-cosplay-title mb-3 mt-5">Some Cosplays for You:</h1>
+    <div class="d-flex justify-content-center">
+      <div class="card-container">
+        <% if @cosplays.any? %>
+          <% @cosplays.sample(8).each do |cosplay| %>
+            <%= link_to cosplay_path(cosplay), class:"card-link" do %>
+              <div class="homepage-card" style="background-image: url( <%= cosplay.images.attached? ? cl_image_path(cosplay.images.first.key) : image_url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png") %> )">
+                <h3> <%= cosplay.name %> </h3>
+              </div>
+            <% end %>
           <% end %>
+          <div class="last-card"></div>
+          <div class="last-card"></div>
+          <div class="last-card"></div>
+        <% else %>
+          <em>Sorry, no cosplays found!</em>
         <% end %>
-      <% else %>
-        <em>Sorry, no cosplays found!</em>
-      <% end %>
+      </div>
     </div>
   </div>
-</div>
 </div>
