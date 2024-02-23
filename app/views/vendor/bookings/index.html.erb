@@ -49,14 +49,14 @@
             </div>
           </div>
           <% if booking.pending? %>
-            <div class="d-flex">
+            <div class="d-flex gap-2">
               <%= simple_form_for booking, url: vendor_booking_path(booking) do |f| %>
                 <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-                <%= f.submit 'Accept', class: 'btn btn-info' %>
+                <%= f.submit 'Accept', class: 'btn btn-primary' %>
               <% end %>
               <%= simple_form_for booking, url: vendor_booking_path(booking) do |f| %>
                 <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-                <%= f.submit 'Reject', class: 'btn btn-light' %>
+                <%= f.submit 'Reject', class: 'btn btn-warning' %>
               <% end %>
             </div>
           <% end%>
