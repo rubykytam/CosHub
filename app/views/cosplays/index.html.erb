@@ -7,6 +7,7 @@
           <div class="card d-flex justify-content-center">
             <%= link_to cosplay_path(cosplay), class:"card-link" do %>
               <div class="homepage-card" style="background-image: url( <%= cosplay.images.attached? ? cl_image_path(cosplay.images.first.key) : image_path("logo.png") %> )">
+                <div class="w-100"></div>
                 <div class="d-flex flex-column w-100 info-text">
                   <h3 style="text-align: center"> <%= cosplay.name %> </h3>
                   <div class="d-flex justify-content-between pl-4 pr-4">
