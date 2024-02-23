@@ -18,6 +18,7 @@ class CosplaysController < ApplicationController
 
   def show
     @cosplay = Cosplay.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-3">
   <div class="cosplay-show-card">
     <h1 class="title"><%= @cosplay.name %></h1>
     <div class="carousel-container my-3">
@@ -25,9 +25,10 @@
         <p>Source: <%= @cosplay.source_material %></p>
         <p><%= @cosplay.price %> ¥ / Per day</p>
         <p>Size: <%= @cosplay.size %></p>
-        <%= link_to "Book Now", new_cosplay_booking_path(@cosplay), class: "button btn-booking" %>
+    <%= render 'bookings/form' %>
       </div>
 
     </div>
   </div>
+
 </div>

@@ -3,11 +3,6 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
   end
 
-  def new
-    @cosplay = Cosplay.find(params[:cosplay_id])
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(booking_params)
     @cosplay = Cosplay.find(params[:cosplay_id])
@@ -16,7 +11,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      render :new, status: :unprocessable_entity
+      render "cosplays/show", status: :unprocessable_entity
     end
   end
 
