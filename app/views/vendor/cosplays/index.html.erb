@@ -1,12 +1,12 @@
 <div class="container">
-  <h1 class=" mb-3 mt-5">All our Cosplays:</h1>
+  <h1 class=" mb-3 mt-5">All your Cosplays:</h1>
   <div class="d-flex justify-content-center">
     <div class="card-container">
       <% if @cosplays.any? %>
         <% @cosplays.each do |cosplay| %>
           <div class="card d-flex justify-content-center">
             <%= link_to cosplay_path(cosplay), class:"card-link" do %>
-              <div class="homepage-card" style="background-image: url( <%= cosplay.images.attached? ? cl_image_path(cosplay.images.first.key) : image_path("logo.png") %> )">
+              <div class="homepage-card" style="background-image: url( <%= cosplay.images.attached? ? cl_image_path(cosplay.images.first.key) : image_url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png") %> )">
                 <div class="d-flex flex-row-reverse" >
                   <i class="fa-solid fa-trash p-2 mask $blue"></i>
                   <i class="fa-solid fa-pen-to-square p-2"></i>
@@ -22,6 +22,9 @@
             <% end %>
           </div>
         <% end %>
+        <div class="last-card"></div>
+        <div class="last-card"></div>
+        <div class="last-card"></div>
       <% else %>
         <p>You haven't uploaded any cosplays... <i>yet</i></p>
       <% end %>
