@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   namespace :vendor do
     resources :bookings, only: [:index, :update]
+    resources :cosplays, only: [:index]
   end
 
   resources :cosplays, only: [:index, :show, :create, :new] do

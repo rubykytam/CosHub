@@ -3,7 +3,7 @@ class CosplaysController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @cosplays = Cosplay.all
+      @cosplays = Cosplay.all
     @pagy, @cosplays = pagy(@cosplays, items: 20)
     if params[:query].present?
       sql_subquery = "name ILIKE :query OR source_material ILIKE :query"
