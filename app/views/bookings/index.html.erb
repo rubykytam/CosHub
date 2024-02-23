@@ -1,44 +1,105 @@
 <div class="container">
   <h1 class="w-50 mb-4">Your Bookings</h1>
-  <% booking_count = 0 %>
-  <% @bookings.order(start_date: :asc).each do |booking| %>
-    <% booking_count += 1 %>
-    <div class="cosplay-show-card">
-      <div class="d-flex justify-content-between">
-        <h1 class="title m-0"><%= booking.cosplay.name %></h1>
-        <p class="btn-booking align-self-center opacity-75">Status: <%= booking.status %></p>
-      </div>
-      <div class="carousel-container my-3">
-        <div id="pictureCarousel<%= booking_count %>" class="carousel slide">
-          <div class="carousel-inner">
-            <%= render "cosplays/images", cosplay: booking.cosplay %>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+      <% booking_count = 0 %>
+      <% @bookings.order(start_date: :asc).each do |booking| %>
+        <% booking_count += 1 %>
+        <div class="cosplay-show-card">
+          <div class="d-flex justify-content-between">
+            <h1 class="title m-0"><%= booking.cosplay.name %></h1>
+            <p class="btn-booking align-self-center opacity-75">Status: <%= booking.status %></p>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="prev">
-            <div class="prev-next-button">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+          <div class="carousel-container my-3">
+            <div id="pictureCarousel<%= booking_count %>" class="carousel slide">
+              <div class="carousel-inner">
+                <%= render "cosplays/images", cosplay: booking.cosplay %>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="prev">
+                <div class="prev-next-button">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </div>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="next">
+                <div class="prev-next-button">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </div>
+              </button>
             </div>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="next">
-            <div class="prev-next-button">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+          </div>
+          <div class="cosplay-info-and-booking-form d-flex justify-content-between">
+            <div class="cosplay-info d-flex flex-column">
+              <p>Source: <%= booking.cosplay.source_material %></p>
+              <p><%= booking.cosplay.price %> ¥ / Per day</p>
+              <p>Size: <%= booking.cosplay.size %></p>
+              <p>From: <%= booking.start_date %>, To: <%= booking.end_date %></p>
+              <% number_of_days = (booking.end_date - booking.start_date).to_i+1 %>
+              <p>Number of days: <%= number_of_days %></p>
+              <% total_price = number_of_days * booking.cosplay.price%>
+              <p>Total price:<%= total_price %> ¥</p>
             </div>
-          </button>
+          </div>
         </div>
-      </div>
-      <div class="cosplay-info-and-booking-form d-flex justify-content-between">
-        <div class="cosplay-info d-flex flex-column">
-          <p>Source: <%= booking.cosplay.source_material %></p>
-          <p><%= booking.cosplay.price %> ¥ / Per day</p>
-          <p>Size: <%= booking.cosplay.size %></p>
-          <p>From: <%= booking.start_date %>, To: <%= booking.end_date %></p>
-          <% number_of_days = (booking.end_date - booking.start_date).to_i+1 %>
-          <p>Number of days: <%= number_of_days %></p>
-          <% total_price = number_of_days * booking.cosplay.price%>
-          <p>Total price:<%= total_price %> ¥</p>
-        </div>
-      </div>
+      <% end %>
     </div>
-  <% end %>
+    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+      <% booking_count = 0 %>
+      <% @bookings.order(start_date: :asc).each do |booking| %>
+        <% booking_count += 1 %>
+        <div class="cosplay-show-card">
+          <div class="d-flex justify-content-between">
+            <h1 class="title m-0"><%= booking.cosplay.name %></h1>
+            <p class="btn-booking align-self-center opacity-75">Status: <%= booking.status %></p>
+          </div>
+          <div class="carousel-container my-3">
+            <div id="pictureCarousel<%= booking_count %>" class="carousel slide">
+              <div class="carousel-inner">
+                <%= render "cosplays/images", cosplay: booking.cosplay %>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="prev">
+                <div class="prev-next-button">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </div>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="next">
+                <div class="prev-next-button">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div class="cosplay-info-and-booking-form d-flex justify-content-between">
+            <div class="cosplay-info d-flex flex-column">
+              <p>Source: <%= booking.cosplay.source_material %></p>
+              <p><%= booking.cosplay.price %> ¥ / Per day</p>
+              <p>Size: <%= booking.cosplay.size %></p>
+              <p>From: <%= booking.start_date %>, To: <%= booking.end_date %></p>
+              <% number_of_days = (booking.end_date - booking.start_date).to_i+1 %>
+              <p>Number of days: <%= number_of_days %></p>
+              <% total_price = number_of_days * booking.cosplay.price%>
+              <p>Total price:<%= total_price %> ¥</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
