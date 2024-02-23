@@ -1,20 +1,22 @@
 <div class="navbar navbar-light navbar-lewagon">
   <div class="container-fluid d-flex flex-nowrap">
     <div class="d-flex align-items-center">
-      <%= link_to root_path, class: "navbar-brand d-flex" do %>
+      <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
         <%= image_tag "coshublogo.png" %>
         <h2 class="m-0 ms-3 text-light">CosHub</h2>
       <% end %>
     </div>
     <div class="d-flex justify-content-end">
-      <%= form_with url: cosplays_path, method: :get, class: "d-flex" do %>
+      <%= form_with url: cosplays_path, method: :get, class: "search-form d-flex" do %>
         <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Search cosplays..."
         %>
-        <%= select_tag(:price_range, options_for_select(([['Any price', nil], ['¥0-2499', '0,2499'], ['¥2500-4999', '2500,4999'], ['¥5000-7499', '5000,7499'], ['¥7500-9999', '7500,9999'], ['¥10000-12499', '10000,12499'], ['¥12500-14999', '12500,14999'], ['¥15000-17499', '15000,17499'], ['¥17500-19999', '17500,19999']]), nil))%>
-        <%= submit_tag "Find!", name: "", class: "btn btn-primary"%>
+        <%= select_tag(:price_range, options_for_select(([['¥', nil], ['¥0-2499', '0,2499'], ['¥2500-4999', '2500,4999'], ['¥5000-7499', '5000,7499'], ['¥7500-9999', '7500,9999'], ['¥10000-12499', '10000,12499'], ['¥12500-14999', '12500,14999'], ['¥15000-17499', '15000,17499'], ['¥17500-19999', '17500,19999']]), nil))%>
+        <%= button_tag(type: 'submit', class: 'btn btn-primary') do %>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        <% end %>
       <% end %>
       <i class="fa-regular fa-bell d-flex align-items-center fs-5 ms-3"></i>
       <ul class="navbar-nav me-auto">
