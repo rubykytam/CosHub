@@ -21,4 +21,8 @@ class Booking < ApplicationRecord
       errors.add(:end_date, "must be later than the start date")
     end
   end
+
+  def pending?
+    status == 'pending'
+  end
 end
