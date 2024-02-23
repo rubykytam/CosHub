@@ -1,12 +1,12 @@
 .form-container {
-    width: 50%;
+    width: 500px;
     height: 600px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px $gray;
     border-radius: 8px;
 
 
-    padding: 12px 20px;
+    padding: 10px;
 
     margin: 0 auto;
 }
@@ -24,10 +24,4 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-}
-
-@media (max-width: 1000px) {
-  .form-container {
-    width: 100%;
-  }
 }

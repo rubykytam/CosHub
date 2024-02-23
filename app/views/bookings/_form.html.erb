@@ -2,14 +2,14 @@
 <%= simple_form_for [@cosplay, @booking], html:{ data: { controller: 'totalprice' }} do |f| %>
   <%= f.input :start_date, html5: true, input_html:{data: { totalprice_target: 'startDate', action: 'change->totalprice#calculatePrice' }} %>
   <%= f.input :end_date, html5: true, input_html:{data: { totalprice_target: 'endDate', action: 'change->totalprice#calculatePrice' }} %>
-  <div data-totalprice-target="unitPrice" data-totalprice-unitprice="<%= @cosplay.price %>"><%= @cosplay.price %> ¥ per Day</div>
-  <div data-totalprice-target="daysDifference"></div>
-  <% if @booking.errors.has_key?(:base) %>
-    <div class="alert alert-danger">
-      <% @booking.errors[:base].each do |error_message| %>
-        <%= error_message %><br>
+      <div data-totalprice-target="unitPrice" data-totalprice-unitprice="<%= @cosplay.price %>"><%= @cosplay.price %> ¥ per Day</div>
+      <div data-totalprice-target="daysDifference"></div>
+        <% if @booking.errors.has_key?(:base) %>
+          <div class="alert alert-danger">
+            <% @booking.errors[:base].each do |error_message| %>
+            <%= error_message %><br>
+          <% end %>
+      </div>
       <% end %>
-    </div>
-  <% end %>
-  <%= f.button :submit, class: "text-white w-100 btn btn-primary my-3" %>
+  <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

@@ -20,7 +20,7 @@
   <h1 class="recent-cosplay-title mb-3">Most recent cosplays:</h1>
   <div class="card-container">
     <% if @cosplays.any? %>
-      <% @cosplays.last(8).each do |cosplay| %>
+      <% @cosplays.last(7).each do |cosplay| %>
         <%= link_to cosplay_path(cosplay), class:"card-link" do %>
           <div class="homepage-card" style="background-image: url( <%= cosplay.images.attached? ? cl_image_path(cosplay.images.first.key) : image_path("logo.png") %> )">
             <h3> <%= cosplay.name %> </h3>
@@ -38,7 +38,7 @@
   <div class="d-flex justify-content-center">
     <div class="card-container">
       <% if @cosplays.any? %>
-        <% @cosplays.sample(8).each do |cosplay| %>
+        <% @cosplays.sample(7).each do |cosplay| %>
           <%= link_to cosplay_path(cosplay), class:"card-link" do %>
             <div class="homepage-card" style="background-image: url( <%= cosplay.images.attached? ? cl_image_path(cosplay.images.first.key) : image_url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png") %> )">
               <h3> <%= cosplay.name %> </h3>
