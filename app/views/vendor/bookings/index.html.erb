@@ -1,49 +1,149 @@
 <div class="container">
-  <h1 class="w-50 mb-4">Requests</h1>
-  <% booking_count = 0 %>
-  <% @bookings.order(start_date: :asc).each do |booking| %>
-    <% booking_count += 1 %>
-    <div class="cosplay-show-card">
-      <div class="d-flex justify-content-between">
-        <h1 class="title m-0"><%= booking.cosplay.name %></h1>
-        <p class="btn-booking align-self-center opacity-75">Status: <%= booking.status %></p>
-      </div>
-      <div class="carousel-container my-3">
-        <div id="pictureCarousel<%= booking_count %>" class="carousel slide">
-          <div class="carousel-inner">
-            <%= render "cosplays/images", cosplay: booking.cosplay %>
+  <div class="w-50 m-auto mb-4 ">
+    <h1 class="">Requests</h1>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending-tab-pane" type="button" role="tab" aria-controls="pending-tab-pane" aria-selected="true">Pending</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="accepted-tab" data-bs-toggle="tab" data-bs-target="#accepted-tab-pane" type="button" role="tab" aria-controls="accepted-tab-pane" aria-selected="false">Accepted</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="rejected-tab" data-bs-toggle="tab" data-bs-target="#rejected-tab-pane" type="button" role="tab" aria-controls="rejected-tab-pane" aria-selected="false">Rejected</button>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="pending-tab-pane" role="tabpanel" aria-labelledby="pending-tab" tabindex="0">
+      <% booking_count = 0 %>
+      <% @bookings.pending.order(start_date: :asc).each do |booking| %>
+        <% booking_count += 1 %>
+        <div class="cosplay-show-card">
+          <div class="d-flex justify-content-between">
+            <h1 class="title m-0"><%= booking.cosplay.name %></h1>
+            <p class="btn-booking align-self-center opacity-75">Status: <%= booking.status %></p>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="prev">
-            <div class="prev-next-button">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
+          <div class="carousel-container my-3">
+            <div id="pictureCarousel<%= booking_count %>" class="carousel slide">
+              <div class="carousel-inner">
+                <%= render "cosplays/images", cosplay: booking.cosplay %>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="prev">
+                <div class="prev-next-button">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </div>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="next">
+                <div class="prev-next-button">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </div>
+              </button>
             </div>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="next">
-            <div class="prev-next-button">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
+          </div>
+          <div class="cosplay-info-and-booking-form d-flex justify-content-between">
+            <div class="cosplay-info d-flex flex-column">
+              <p>Username: <%= booking.user.email %></p>
+              <p>From: <%= booking.start_date %>, To: <%= booking.end_date %></p>
             </div>
-          </button>
+          </div>
+          <div class="d-flex">
+            <%= simple_form_for booking, url: vendor_booking_path(booking) do |f| %>
+              <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+              <%= f.submit 'Accept', class: 'btn btn-info' %>
+            <% end %>
+            <%= simple_form_for booking, url: vendor_booking_path(booking) do |f| %>
+              <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+              <%= f.submit 'Reject', class: 'btn btn-light' %>
+            <% end %>
+          </div>
         </div>
-      </div>
-      <div class="cosplay-info-and-booking-form d-flex justify-content-between">
-        <div class="cosplay-info d-flex flex-column">
-          <p>Username: <%= booking.user.email %></p>
-          <p>From: <%= booking.start_date %>, To: <%= booking.end_date %></p>
-        </div>
-      </div>
-    <div class="d-flex">
-  <%= simple_form_for booking, url: vendor_booking_path(booking) do |f| %>
-    <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-    <%= f.submit 'Accept', class: 'btn btn-info' %>
-  <% end %>
-
-  <%= simple_form_for booking, url: vendor_booking_path(booking) do |f| %>
-    <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-    <%= f.submit 'Reject', class: 'btn btn-light' %>
-  <% end %>
-</div>
+      <% end %>
     </div>
-  <% end %>
+    <div class="tab-pane fade show" id="accepted-tab-pane" role="tabpanel" aria-labelledby="accepted-tab" tabindex="0">
+      <% booking_count = 0 %>
+      <% @bookings.accepted.order(start_date: :asc).each do |booking| %>
+        <% booking_count += 1 %>
+        <div class="cosplay-show-card">
+          <div class="d-flex justify-content-between">
+            <h1 class="title m-0"><%= booking.cosplay.name %></h1>
+            <p class="btn-booking align-self-center opacity-75">Status: <%= booking.status %></p>
+          </div>
+          <div class="carousel-container my-3">
+            <div id="pictureCarousel<%= booking_count %>" class="carousel slide">
+              <div class="carousel-inner">
+                <%= render "cosplays/images", cosplay: booking.cosplay %>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="prev">
+                <div class="prev-next-button">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </div>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="next">
+                <div class="prev-next-button">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div class="cosplay-info-and-booking-form d-flex justify-content-between">
+            <div class="cosplay-info d-flex flex-column">
+              <p>Username: <%= booking.user.email %></p>
+              <p>From: <%= booking.start_date %>, To: <%= booking.end_date %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="tab-pane fade show" id="rejected-tab-pane" role="tabpanel" aria-labelledby="rejected-tab" tabindex="0">
+      <% booking_count = 0 %>
+      <% @bookings.rejected.order(start_date: :asc).each do |booking| %>
+        <% booking_count += 1 %>
+        <div class="cosplay-show-card">
+          <div class="d-flex justify-content-between">
+            <h1 class="title m-0"><%= booking.cosplay.name %></h1>
+            <p class="btn-booking align-self-center opacity-75">Status: <%= booking.status %></p>
+          </div>
+          <div class="carousel-container my-3">
+            <div id="pictureCarousel<%= booking_count %>" class="carousel slide">
+              <div class="carousel-inner">
+                <%= render "cosplays/images", cosplay: booking.cosplay %>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="prev">
+                <div class="prev-next-button">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </div>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#pictureCarousel<%= booking_count %>" data-bs-slide="next">
+                <div class="prev-next-button">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div class="cosplay-info-and-booking-form d-flex justify-content-between">
+            <div class="cosplay-info d-flex flex-column">
+              <p>Username: <%= booking.user.email %></p>
+              <p>From: <%= booking.start_date %>, To: <%= booking.end_date %></p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <%= simple_form_for booking, url: vendor_booking_path(booking) do |f| %>
+              <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+              <%= f.submit 'Accept', class: 'btn btn-info' %>
+            <% end %>
+            <%= simple_form_for booking, url: vendor_booking_path(booking) do |f| %>
+              <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+              <%= f.submit 'Reject', class: 'btn btn-light' %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
