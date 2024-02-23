@@ -18,44 +18,32 @@
           <i class="text-light fa-solid fa-magnifying-glass"></i>
         <% end %>
       <% end %>
-      <i class="fa-regular fa-bell d-flex align-items-center fs-5 ms-3 me-3"></i>
-      <% if user_signed_in? %>
-        <%# <li class="nav-item dropdown"> %>
-        <%# <a href="#" class="ms-3" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> %>
-        <button class="bg-light navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <%# </a> %>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto">
-            <%# <div class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown"> %>
-            <li class="nav-item">
-              <%= link_to "My Orders",  bookings_path, class: "dropdown-item" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "My Products", vendor_cosplays_path, class: "dropdown-item" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Requests", vendor_bookings_path, class: "dropdown-item" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Sell a cosplay", new_cosplay_path, class: "dropdown-item" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Settings", "#", class: "dropdown-item" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </li>
-            <%# </div> %>
-          </ul>
-        </div>
-        <%# </li> %>
-      <% else %>
-        <li class="nav-item ms-3 text-decoration-none">
-          <%= link_to "Login", new_user_session_path, class: "btn btn-light login-button px-3" %>
-        </li>
-      <% end %>
+      <i class="fa-regular fa-bell d-flex align-items-center fs-5 ms-3"></i>
+      <ul class="navbar-nav me-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <a href="#" class="ms-3" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="bg-light navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
+                <%= link_to "My Orders",  bookings_path, class: "dropdown-item" %>
+                <%= link_to "My Products", vendor_cosplays_path, class: "dropdown-item" %>
+                <%= link_to "Requests", vendor_bookings_path, class: "dropdown-item" %>
+                <%= link_to "Sell a cosplay", new_cosplay_path, class: "dropdown-item" %>
+                <%= link_to "Settings", "#", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item ms-3">
+            <%= link_to "Login", new_user_session_path, class: "btn btn-light login-button px-3" %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
