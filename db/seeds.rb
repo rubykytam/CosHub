@@ -10,6 +10,8 @@ user2 = User.create(email: 'ilovecosplay@gmail.com', password: 'ilovecosplay')
 user3 = User.create(email: 'cosplayfantasy@hotmail.com', password: 'fantasy1234')
 user4 = User.create(email: 'findcosplay123@hotmail.com', password: 'finding123')
 user5 = User.create(email: 'cosplaylover@gmail.com', password: 'lovelovelove')
+user6 = User.create(email: '456@gmail.com', password: '456456')
+user7 = User.create(email: '789@gmail.com', password: '789789')
 
 COSPLAYS = [
   {
@@ -26,7 +28,7 @@ COSPLAYS = [
     size: "M",
     price: 12000,
     user: user2,
-    image_url:['https://i.pinimg.com/564x/17/44/85/17448573378518e8d7dd86552639f923.jpg']
+    image_url:['https://i.pinimg.com/564x/17/44/85/17448573378518e8d7dd86552639f923.jpg','https://i.ebayimg.com/images/g/6UwAAOSweqZk0G90/s-l1600.jpg']
   },
   {
     name: 'Yor Forger',
@@ -34,7 +36,7 @@ COSPLAYS = [
     size: "L",
     price: 15000,
     user: user3,
-    image_url:['https://ae01.alicdn.com/kf/S97d34b0b0a2f441a8218ef787f4aa656q/Anime-SPY-FAMILY-Cosplay-Yor-Forger-Cosplay-Costume-Manga-SPY-FAMILY-Cosplay-Costume-Women-Yor-Shoes.jpg']
+    image_url:['https://ae01.alicdn.com/kf/S97d34b0b0a2f441a8218ef787f4aa656q/Anime-SPY-FAMILY-Cosplay-Yor-Forger-Cosplay-Costume-Manga-SPY-FAMILY-Cosplay-Costume-Women-Yor-Shoes.jpg','https://gvavayacosplay.com/cdn/shop/products/1_d094f77f-f5cf-496a-b135-d2b7af77bc29.jpg?v=1650336148']
   },
   {
     name: 'Sasuke',
@@ -106,8 +108,81 @@ COSPLAYS = [
     size: "L",
     price: 8000,
     user: user2,
-    image_url:['https://cosplayflying.com/cdn/shop/products/GameTwisted-WonderlandSleepingBeautyMalleusDraconiaCosplayCostumeMaleUniformOutfit-1_1000x.jpg?v=1588231807']
+    image_url:['https://cosplayflying.com/cdn/shop/products/GameTwisted-WonderlandSleepingBeautyMalleusDraconiaCosplayCostumeMaleUniformOutfit-1_1000x.jpg?v=1588231807','https://cossky.com/cdn/shop/products/05d2a559b4edabe510cb192bdda882f2_600x.jpg?v=1589437523']
+  },
+  {
+    name: 'Ai',
+    source_material: 'Oshi no Ko',
+    size: "S",
+    price: 5000,
+    user: user6,
+    image_url:['https://gvavayacosplay.com/cdn/shop/products/0_278c007c-43af-4ff3-b26f-a48c1409efef.jpg?v=1681727447','https://coshd.co.uk/cdn/shop/products/40bc76e04ac72f73133763ccfb53125d.jpg?v=1696819596']
+  },
+  {
+    name: 'Leon',
+    source_material: 'Pokemon',
+    size: "XL",
+    price: 4000,
+    user: user6,
+    image_url:['https://ycosplay.com/cdn/shop/products/1_f7ed33db-7f55-477e-a761-17955950e7d5.jpg?v=1592978992','https://i.ebayimg.com/images/g/RKMAAOSw-ktfolbX/s-l1600.jpg']
+  },
+  {
+    name: 'James',
+    source_material: 'Pokemon',
+    size: "XL",
+    price: 3500,
+    user: user6,
+    image_url:['https://cdn.costumewall.com/wp-content/plugins/image-hot-spotter/images/JamesTeamRocketCostumeOutfit.jpg']
+  },
+  {
+    name: 'Ace',
+    source_material: 'One Piece',
+    size: "XL",
+    price: 2500,
+    user: user6,
+    image_url:['https://ae01.alicdn.com/kf/S7218bfed061045419193295e0b7938ebl.jpg_640x640Q90.jpg_.webp']
+  },
+  {
+    name: 'Chloe',
+    source_material: 'The Promise of Wizard',
+    size: "L",
+    price: 4900,
+    user: user6,
+    image_url:['https://m.media-amazon.com/images/I/511pCvowEJL._AC_UF894,1000_QL80_.jpg']
+  },
+  {
+    name: 'Frieren',
+    source_material: 'Beyond Journey',
+    size: "M",
+    price: 8000,
+    user: user3,
+    image_url:['https://gvavayacosplay.com/cdn/shop/files/8.21-5.jpg?v=1692613934','https://ae01.alicdn.com/kf/S5dc8e653010645ca97acd469ddde1101k.jpg_640x640Q90.jpg']
+  },
+  {
+    name: 'Lilia',
+    source_material: 'Twisted Wonderland',
+    size: "M",
+    price: 7000,
+    user: user3,
+    image_url:['https://cdn.shopify.com/s/files/1/0052/4032/4168/products/GameTwisted-WonderlandSleepingBeautyLiliaVanrougeCosplayCostumeMaleUniformOutfit-1_300x.jpg?v=1587622985','https://www.cosplayclan.com/cdn/shop/products/5_27a97ee9-ff9c-4b2b-ac76-cd7d660635d6_800x.jpg?v=1659325851']
+  },
+  {
+    name: 'Syo',
+    source_material: 'Uta no Prince',
+    size: "S",
+    price: 3000,
+    user: user2,
+    image_url:['https://www.cosercosplay.com/images/cosplay/Uta%20no%20Prince%20sama%20Syo%20Kurusu%20Saotome%20Academy%20School%20Uniofrm%20Cosplay%20Costume%20001%20(3).jpg']
+  },
+  {
+    name: 'Shimakaze',
+    source_material: 'Kannmusume',
+    size: "S",
+    price: 8000,
+    user: user4,
+    image_url:['https://down-vn.img.susercontent.com/file/c38d867affcb89974257312222e2c615']
   }
+
 ]
 
 COSPLAYS.each do |cosplay|

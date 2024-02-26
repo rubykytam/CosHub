@@ -35,6 +35,25 @@ background-color: $light-gray;
   align-items: center;
 }
 
+#navbarSupportedContent {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: $light-gray;
+  color: $gray;
+  padding: 8px;
+  border-radius: 8px;
+  line-height: 32px;
+  box-shadow: 0 0 10px $gray;
+}
+
+.dropdown-item {
+  padding: 4px;
+  &:hover {
+      background-color: rgba(1,186,239,0.25);
+    }
+}
+
 @media (max-width: 600px) {
   .search-form * {
     font-size: 10px;
